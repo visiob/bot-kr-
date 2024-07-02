@@ -317,8 +317,8 @@ void error(personal temp) {
 	while (true) {
 		
 		getline(cin, feedback);
-		if (feedback.empty() || feedback[0] == '\0') {
-			cout << "Введіть повідомдення дані! Ви неможете віправити пусте повідомлення" << endl;
+		if (feedback[0] == '\0') {
+			cout << "Ви неможете віправити порожнє повідомлення!" << endl;
 			
 		}
 		else {
@@ -332,10 +332,10 @@ void error(personal temp) {
 	else if (temp.style_com == "дружній") {
 		cout << "Начіркай ще пошту свою: " << endl;
 	}
-
 	while (true) {
-		getline(cin >> ws, mail);
-		if (mail.find("@") == 0) {
+
+		getline(cin, mail);
+		if (mail.find("@") == 0 || mail[0] == '\0') {
 			cout << "Введіть вірні дані!" << endl;
 		}
 		else if (mail.find("@gmail.com") == string::npos) {
@@ -353,14 +353,14 @@ void mistake(personal pers, storage temp[], const int size) {
 	int count = 0;
 
 	if (pers.style_com == "офіційний") {
-		cout << "Якщо ви знайщли помилку в параметрах товару, ви можете її виправити. Впишіть модель товару: " << endl;
+		cout << "Якщо ви знайшли помилку в параметрах товару, ви можете її виправити. Впишіть модель товару: " << endl;
 	}
 	else if (pers.style_com == "дружній") {
 		if (pers.gender == "М") {
-			cout << "Знайшов помилку в параметрах товарів, впиши сюди модель товару та ліквідуй її: " << endl;
+			cout << "Знайшов помилку в параметрах товарів, впиши сюди модель товару та ліквідуй помилку: " << endl;
 		}
 		else if (pers.gender == "Ж") {
-			cout << "Знайшла помилку в параметрах товарів, впиши сюди модель товару та ліквідуй її: " << endl;
+			cout << "Знайшла помилку в параметрах товарів, впиши сюди модель товару та ліквідуй помилку: " << endl;
 		}
 	}
 	getline(cin >> ws, search);
