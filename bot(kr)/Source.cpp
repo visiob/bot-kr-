@@ -75,7 +75,7 @@ int action(personal temp) {
 			cout << "Бро обери дію яку хочешь виконати: " << endl;
 		}
 		else if (temp.gender == "Ж") {
-			cout << "Гарна леді обери дію яку хочешь виконати: " << endl;
+			cout << "Прекрасна леді обери дію яку хочешь виконати: " << endl;
 		}
 	}
 	cout << "1 - пошук товарів" << endl << "2 - допомога" << endl << "3 - вихід з програми" << endl;
@@ -235,7 +235,7 @@ void search_by_max_weight(const storage temp[], const int size, int weight, pers
 	int count = 0;
 	cout << endl;
 	for (int i = 0; i < size; i++) {
-		if (weight <= temp[i].weight) {
+		if (weight >= temp[i].weight) {
 			cout << "Класс: " << temp[i].goods_class << endl << "Статус: " << temp[i].availability << endl << "Бренд: " << temp[i].brand << endl << "Модель: " << temp[i].model << endl << "Колір: " << temp[i].color << endl << "Вага: " << temp[i].weight << "г" << endl;
 			count -= 1;
 			cout << endl;
@@ -261,7 +261,7 @@ void search_by_min_weight(const storage temp[], const int size, int weight, pers
 	int count = 0;
 	cout << endl;
 	for (int i = 0; i < size; i++) {
-		if (weight >= temp[i].weight) {
+		if (weight <= temp[i].weight) {
 			cout << "Класс: " << temp[i].goods_class << endl << "Статус: " << temp[i].availability << endl << "Бренд: " << temp[i].brand << endl << "Модель: " << temp[i].model << endl << "Колір: " << temp[i].color << endl << "Вага: " << temp[i].weight << "г" << endl;
 			count -= 1;
 			cout << endl;
